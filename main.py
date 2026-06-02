@@ -23,7 +23,17 @@ def main():
     print("Welcome to the Math App!!!")
     print("")  # line break
     ### write code to complete this function BELOW here ###
-
+    val_1 = app_functions.roll_die()
+    val_2 = app_functions.roll_die()
+    q_type = app_functions.roll_die()
+    app_functions.print_question(val_1, val_2, q_type)
+    ans = app_functions.input_answer()
+    if ans == -1:
+        app_functions.print_error_message()
+    if app_functions.is_correct_answer(val_1, val_2, q_type, ans):
+        app_functions.print_congratulations(q_type)
+    else:
+        app_functions.print_correct_answer(val_1, val_2, q_type)
     ### write code to complete this function ABOVE here ###
     print("")  # line break
     print("Game over!!!")
